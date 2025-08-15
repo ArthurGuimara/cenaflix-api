@@ -1,0 +1,127 @@
+{
+  "info": {
+    "name": "Cenaflix",
+    "_postman_id": "b1f53c96-5d77-4b29-9dcb-6f3fbd3d2a9d",
+    "description": "Coleção de testes para a API Cenaflix",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Filmes - Listar",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/filmes"
+      }
+    },
+    {
+      "name": "Filmes - Criar",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\": \"Matrix\", \"sinopse\": \"Um hacker descobre a verdade sobre sua realidade.\", \"genero\": \"Ficção\", \"ano\": 1999}"
+        },
+        "url": "http://localhost:8080/filmes"
+      }
+    },
+    {
+      "name": "Filmes - Detalhar",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/filmes/1"
+      }
+    },
+    {
+      "name": "Filmes - Atualizar",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"titulo\": \"Matrix Reloaded\", \"sinopse\": \"Neo enfrenta novos desafios.\", \"genero\": \"Ficção\", \"ano\": 2003}"
+        },
+        "url": "http://localhost:8080/filmes/1"
+      }
+    },
+    {
+      "name": "Filmes - Remover",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/filmes/1"
+      }
+    },
+    {
+      "name": "Análises - Listar",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/analises"
+      }
+    },
+    {
+      "name": "Análises - Criar",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"filme\": {\"id\": 1}, \"texto\": \"Clássico absoluto\", \"nota\": 10}"
+        },
+        "url": "http://localhost:8080/analises"
+      }
+    },
+    {
+      "name": "Análises - Detalhar",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/analises/1"
+      }
+    },
+    {
+      "name": "Análises - Atualizar",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"filme\": {\"id\": 1}, \"texto\": \"Muito bom ainda\", \"nota\": 9}"
+        },
+        "url": "http://localhost:8080/analises/1"
+      }
+    },
+    {
+      "name": "Análises - Remover",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/analises/1"
+      }
+    },
+    {
+      "name": "Análises por Filme",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/filmes/1/analises"
+      }
+    }
+  ]
+}

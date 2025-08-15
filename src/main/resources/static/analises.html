@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cenaflix — Análises</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body data-page="analises">
+  <header>
+    <h1>Análises</h1>
+    <nav> 
+     <nav>
+  <a href="index.html">Home</a>
+  <a href="filmes.html">Filmes</a>
+  <a href="analises.html">Análises</a>
+  <button id="btn-theme-toggle" class="secondary">🌙 Escuro</button>
+</nav>
+
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Criar / Editar Análise</h2>
+      <form id="form-analise" autocomplete="off">
+        <input type="hidden" id="analise-id" />
+        <div class="grid">
+          <label>Filme<br/>
+            <select id="analise-filme" required></select>
+          </label>
+          <label>Nota (0-10)<br/>
+            <input id="analise-nota" type="number" min="0" max="10" required/>
+          </label>
+        </div>
+        <label>Texto<br/>
+          <textarea id="analise-texto" rows="3" required maxlength="1000"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit" id="btn-salvar-analise">Salvar</button>
+          <button type="button" id="btn-limpar-analise" class="secondary">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="header-row">
+        <h2>Lista de Análises</h2>
+        <div>
+          <select id="filtro-filme"></select>
+          <button id="btn-listar-por-filme" class="secondary">Por Filme</button>
+          <button id="btn-listar-todas" class="secondary">Todas</button>
+        </div>
+      </div>
+      <table id="tbl-analises">
+        <thead>
+          <tr>
+            <th>ID</th><th>Filme (ID)</th><th>Nota</th><th>Texto</th><th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
